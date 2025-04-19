@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            padding: 40px;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .register-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .register-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>🔐 Login</h2>
+        <form method="POST" action="/login" id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required />
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required />
+            <button type="submit">Login</button>
+        </form>
+        <div class="register-link">
+            <p>Don't have an account? <a href="/register">Register here</a></p>
+        </div>
+    </div>
+</body>
+<script >
+    // Function to validate the login form
+function validateLoginForm(event) {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+
+    if (username === '') {
+        alert('❌ Username is required.');
+        event.preventDefault();
+        return false;
+    }
+
+    if (password === '') {
+        alert('❌ Password is required.');
+        event.preventDefault();
+        return false;
+    }
+
+    return true;
+}
+
+// Attach event listeners to forms
+document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.querySelector('form[action="/register"]');
+    const loginForm = document.querySelector('form[action="/login"]');
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', validateRegistrationForm);
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener('submit', validateLoginForm);
+    }
+});
+</script>
+</html>

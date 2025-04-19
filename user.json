@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "password": "123",
+    "username": "alice",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "username": "bob",
+    "password": "1234",
+    "role": "user"
+  },
+  {
+    "id": 3,
+    "username": "NORHANE",
+    "password": "1234",
+    "role": "admin"
+  },
+  {
+    "id": 4,
+    "username": "RADJAA",
+    "password": "12345",
+    "role": "user"
+  },
+  {
+    "username": "TEST",
+    "password": "TEST",
+    "role": "user"
+  },
+  {
+    "username": "ttest",
+    "password": "111",
+    "role": "user"
+  }
+]
